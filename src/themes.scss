@@ -1,0 +1,89 @@
+
+
+@use '@angular/material' as mat;
+
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// **Be sure that you only ever include this mixin once!**
+@include mat.core();
+
+// Custom colors
+$kwk-primary: (
+  50 : #e2e7f5,
+  100 : #b6c2e6,
+  200 : #869ad6,
+  300 : #5671c6,
+  400 : #3152b9,
+  500 : #0d34ad,
+  600 : #0b2fa6,
+  700 : #09279c,
+  800 : #072193,
+  900 : #031583,
+  A100 : #b0b7ff,
+  A200 : #7d88ff,
+  A400 : #4a59ff,
+  A700 : #3042ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$kwk-accent: (
+  50 : #f5f0e2,
+  100 : #e6dbb6,
+  200 : #d6c386,
+  300 : #c6aa56,
+  400 : #b99831,
+  500 : #ad860d,
+  600 : #a67e0b,
+  700 : #9c7309,
+  800 : #936907,
+  900 : #835603,
+  A100 : #ffdfb0,
+  A200 : #ffcb7d,
+  A400 : #ffb64a,
+  A700 : #ffac30,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+// Define the default theme (same as the example above).
+$kwk-app-primary: mat.define-palette($kwk-primary);
+$kwk-app-accent: mat.define-palette($kwk-accent);
+$kwk-app-theme: mat.define-light-theme((
+  color: (primary: $kwk-app-primary, accent: $kwk-app-accent),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// Include the default theme styles.
+@include mat.all-component-themes($kwk-app-theme);
