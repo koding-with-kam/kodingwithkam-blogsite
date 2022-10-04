@@ -1,0 +1,53 @@
+.mat-toolbar.mat-primary {
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+
+  .mat-button {
+    font-size: 16px;
+  }
+
+  /*Hide Mobile menu on desktop screens*/
+  .mobile__menu {
+    display: none;
+  }
+
+  .fill__space {
+    /* This fills the remaining space, by using flexbox.
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+
+  .header__logo {
+    margin-top: 10px;
+    .header__image {
+      width: 300px;
+      height: auto;
+    }
+  }
+
+  .header__logo:hover {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .mat-toolbar.mat-primary {
+
+    /*Hide desktop menu on mobile screens */
+    .desktop__menu {
+      display: none;
+    }
+
+    .mobile__menu {
+      display: inline-flex;
+
+      .mobile__overlay {
+        button.mat-menu-item {
+        }
+      }
+    }
+  }
+}
