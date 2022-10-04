@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { MaterialModule } from "../../../material";
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -8,7 +10,10 @@ describe('AppComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AppComponent ]
+      declarations: [ AppComponent ],
+      imports: [MaterialModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+
     })
     .compileComponents();
 
