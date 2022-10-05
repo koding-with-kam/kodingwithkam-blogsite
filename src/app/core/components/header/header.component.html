@@ -1,11 +1,11 @@
-
+<a mat-button routerLink="/home">Home</a>
 <mat-toolbar color="primary" class="mat-elevation-z6">
   <mat-toolbar-row class="desktop__menu">
     <div class="header__logo" role="button" aria-label="Clickable logo (redirects to home page)">
       <img class="header__image" src="assets/images/kwk-logo.png" alt="Koding with Kam logo">
     </div>
     <span class="fill__space"></span>
-    <a mat-button routerLink="/home">Home</a>
+    <a mat-button routerLink="/">Home</a>
   </mat-toolbar-row>
 
   <!--Mobile Menu -->
@@ -18,7 +18,7 @@
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu class="mobile__overlay" #menu="matMenu" aria-label="Mobile Menu">
-      <a mat-menu-item routerLink="/home">Home</a>
+      <a mat-menu-item routerLink="/">Home</a>
     </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>

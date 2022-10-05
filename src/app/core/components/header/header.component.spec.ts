@@ -1,19 +1,24 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {Component, CUSTOM_ELEMENTS_SCHEMA, DebugElement} from '@angular/core';
 
 import { HeaderComponent } from './header.component';
 import  { By } from "@angular/platform-browser";
 import { RouterLinkDirectiveStub } from "../../../../testing/router-link-directive-stub";
 import { MaterialModule } from "../../../material";
 
+@Component({selector: 'router-outlet', template: ''})
+class RouterOutletStubComponent {
+}
+
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
   let routerLinks: RouterLinkDirectiveStub[];
+  let linkDes: DebugElement[];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ],
+      declarations: [ HeaderComponent, RouterLinkDirectiveStub ],
       imports: [MaterialModule],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
@@ -24,7 +29,7 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
 
     // find DebugElements with an attached RouterLinkStubDirective
-    let linkDes = fixture.debugElement.queryAll(By.directive(RouterLinkDirectiveStub));
+    linkDes = fixture.debugElement.queryAll(By.directive(RouterLinkDirectiveStub));
 
     // get attached link directive instances
     // using each DebugElement's injector
@@ -37,10 +42,8 @@ describe('HeaderComponent', () => {
 
   it('can get RouterLinks from template', () => {
     expect(routerLinks.length)
-      .withContext('should have 3 routerLinks')
-      .toBe(3);
-    expect(routerLinks[0].linkParams).toBe('/dashboard');
-    expect(routerLinks[1].linkParams).toBe('/heroes');
-    expect(routerLinks[2].linkParams).toBe('/about');
+      .withContext('should have 1 routerLinks')
+      .toBe(2);
+    expect(routerLinks[0].linkParams).toBe('/');
   });
 });
