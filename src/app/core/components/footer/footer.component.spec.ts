@@ -5,6 +5,7 @@ import { FooterComponent } from './footer.component';
 describe('FooterComponent', () => {
   let component: FooterComponent;
   let fixture: ComponentFixture<FooterComponent>;
+  let p: HTMLElement;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -15,9 +16,14 @@ describe('FooterComponent', () => {
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    p = fixture.nativeElement.querySelector('p');
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render footer copy', () => {
+    expect(p.textContent).toBe('KodingWithKam.com')
+  })
 });

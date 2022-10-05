@@ -1,0 +1,13 @@
+.footer {
+  flex-shrink: 0;
+  padding: 12px;
+  .footer__logo__wrapper {
+    .footer__logo {
+      width: 150px;
+      height: auto;
+    }
+  }
+  .footer__copyright {
+    text-align: center;
+  }
+}

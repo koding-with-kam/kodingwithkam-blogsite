@@ -43,7 +43,7 @@ describe('HeaderComponent', () => {
   it('can get RouterLinks from template', () => {
     expect(routerLinks.length)
       .withContext('should have 1 routerLinks')
-      .toBe(2);
+      .toBe(1);
     expect(routerLinks[0].linkParams).toBe('/');
   });
 });
