@@ -8,12 +8,14 @@ import { MaterialModule } from '../material';
 
 import { AppComponent } from './containers/app/app.component';
 import { NotFoundPageComponent } from './containers/not-found-page/not-found-page.component';
-import { HeaderComponent } from "./components/header/header.component";
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 export const COMPONENTS = [
   AppComponent,
   NotFoundPageComponent,
-  HeaderComponent
+  HeaderComponent,
+  FooterComponent
 ];
 
 @NgModule({
